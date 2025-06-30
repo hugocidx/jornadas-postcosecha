@@ -1366,85 +1366,69 @@
     </section>
     <!-- Sección de contacto fin -->
 
-    <!-- Sección de mapa inicio -->
+    <!-- Sección de ubicación y transporte inicio -->
     <section id="google-map-area" style="position: relative; overflow: hidden;">
 
-
-      <!-- Información del venue -->
-      <div class="venue-info-section" style="background: linear-gradient(135deg, var(--uc-azul-claro) 0%, var(--uc-azul-medio) 100%); padding: 80px 0; color: white;">
+      <!-- Información del venue y transporte -->
+      <div class="transport-info-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 60px 0;">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="venue-content">
-                <h2 class="text-white mb-4" style="font-size: 2.5rem; font-weight: 700;">Ubicación del Evento</h2>
-                <div class="venue-details">
-                  <div class="venue-item mb-3 d-flex align-items-start">
-                    <i class="fa fa-map-marker-alt text-white me-3" style="font-size: 1.2rem; margin-top: 4px;"></i>
-                    <div>
-                      <h5 class="text-white mb-1">Campus San Joaquín</h5>
-                      <p class="mb-0" style="opacity: 0.9;">Auditorio Francisco Rosende<br>Facultad de Economía y Administración</p>
-                    </div>
-                  </div>
-                  <div class="venue-item mb-3 d-flex align-items-start">
-                    <i class="fa fa-map text-white me-3" style="font-size: 1.2rem; margin-top: 4px;"></i>
-                    <div>
-                      <p class="mb-0" style="opacity: 0.9;">Vicuña Mackenna 4860, Macul<br>Santiago, Chile</p>
-                    </div>
-                  </div>
-                  <div class="venue-item mb-3 d-flex align-items-start">
-                    <i class="fa fa-university text-white me-3" style="font-size: 1.2rem; margin-top: 4px;"></i>
-                    <div>
-                      <p class="mb-0" style="opacity: 0.9;">Pontificia Universidad Católica de Chile</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="mt-4">
-                  <a href="https://goo.gl/maps/your-uc-campus-link" target="_blank" class="btn btn-outline-light btn-lg">
-                    <i class="fa fa-external-link-alt me-2"></i>Ver en Google Maps
-                  </a>
-                </div> -->
-              </div>
+          <!-- Título principal -->
+          <div class="row">
+            <div class="col-md-12 text-center mb-5">
+              <h3 style="color: var(--uc-azul-oscuro); font-weight: 700; font-size: 2.2rem; margin-bottom: 15px;">Ubicación y Cómo llegar</h3>
+              <p style="color: var(--uc-gris-oscuro); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">IX Jornadas de Postcosecha Chile 2025 - Campus San Joaquín, Universidad Católica de Chile</p>
             </div>
-            <div class="col-lg-6">
-              <div class="venue-image text-center">
-                <div class="venue-visual mb-4">
-                  <!-- Placeholder para imagen del campus -->
-                  <div class="campus-placeholder" style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 60px 20px; border: 2px dashed rgba(255,255,255,0.3);">
-                    <i class="lni lni-university" style="font-size: 4rem; color: rgba(255,255,255,0.7); margin-bottom: 20px;"></i>
-                    <p class="text-white mb-0" style="opacity: 0.8; font-size: 1.1rem; font-weight: 500;">
-                      Campus San Joaquín
-                    </p>
-                    <p class="text-white mb-0" style="opacity: 0.6; font-size: 0.9rem;">
-                      Pontificia Universidad Católica de Chile
-                    </p>
+          </div>
+
+          <!-- Información del evento -->
+          <div class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+              <div class="venue-info" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 6px solid var(--uc-celeste);">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h4 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 20px; font-size: 1.5rem;">
+                      <i class="lni lni-map-marker" style="color: var(--uc-celeste); margin-right: 10px;"></i>
+                      Campus San Joaquín UC
+                    </h4>
+                    <div class="venue-details">
+                      <p style="color: var(--uc-gris-oscuro); margin-bottom: 10px; font-size: 1rem;">
+                        <strong style="color: var(--uc-azul-oscuro);">Dirección:</strong> Vicuña Mackenna 4860, Macul, Santiago
+                      </p>
+                      <p style="color: var(--uc-gris-oscuro); margin-bottom: 10px; font-size: 1rem;">
+                        <strong style="color: var(--uc-azul-oscuro);">Facultad:</strong> Agronomía e Ingeniería Forestal
+                      </p>
+                      <p style="color: var(--uc-gris-oscuro); margin-bottom: 0; font-size: 1rem;">
+                        <strong style="color: var(--uc-azul-oscuro);">Aula:</strong> Aula Magna
+                      </p>
+                    </div>
                   </div>
-                </div>
-                
-                <!-- Botón para ver en Google Maps -->
-                <div class="mt-3">
-                  <a href="https://goo.gl/maps/UC-campus-san-joaquin" target="_blank" class="btn btn-outline-light btn-lg" style="border: 2px solid rgba(255,255,255,0.8); padding: 12px 30px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'; this.style.borderColor='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.8)'">
-                    <i class="lni lni-map-marker" style="margin-right: 8px;"></i>Ver en Google Maps
-                  </a>
+                  <div class="col-md-4 text-center text-md-right">
+                    <div class="event-dates" style="background: linear-gradient(135deg, var(--uc-celeste), var(--uc-azul)); padding: 25px 20px; border-radius: 15px; color: white;">
+                      <h5 style="color: white; margin-bottom: 8px; font-weight: 600;">
+                        <i class="lni lni-calendar" style="margin-right: 8px;"></i>
+                        15 y 16 Octubre
+                      </h5>
+                      <p style="color: white; margin-bottom: 5px; font-size: 0.9rem; opacity: 0.9;">2025</p>
+                      <p style="color: white; margin: 0; font-size: 0.9rem; opacity: 0.9;">
+                        <i class="lni lni-timer" style="margin-right: 5px;"></i>
+                        9:00 - 18:00 hrs
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Información de transporte -->
-      <div class="transport-info-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 60px 0;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center mb-5">
-              <h3 style="color: var(--uc-azul-oscuro); font-weight: 700; font-size: 2.2rem; margin-bottom: 15px;">Cómo llegar</h3>
-              <p style="color: var(--uc-gris-oscuro); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Encuentra la mejor forma de llegar al Campus San Joaquín para las IX Jornadas de Postcosecha</p>
+          <!-- Opciones de transporte -->
+          <div class="row mb-4">
+            <div class="col-md-12 text-center">
+              <h4 style="color: var(--uc-azul-oscuro); font-weight: 600; font-size: 1.6rem; margin-bottom: 30px;">Opciones de Transporte</h4>
             </div>
           </div>
           
           <div class="row justify-content-center">
             <!-- Metro -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-celeste);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
                 <div class="transport-icon mb-3">
                   <i class="lni lni-train" style="font-size: 3rem; color: var(--uc-celeste); margin-bottom: 20px;"></i>
@@ -1453,13 +1437,13 @@
                 <div class="transport-details">
                   <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;"><strong>Línea 5</strong></p>
                   <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Estación San Joaquín</p>
-                  <p style="color: var(--uc-celeste); margin: 0; font-weight: 600; font-size: 0.9rem;">5 min caminando</p>
+                  <p style="color: var(--uc-celeste); margin: 0; font-weight: 600; font-size: 0.9rem;">10 min caminando</p>
                 </div>
               </div>
             </div>
 
             <!-- Auto particular -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-azul);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
                 <div class="transport-icon mb-3">
                   <i class="lni lni-car" style="font-size: 3rem; color: var(--uc-azul); margin-bottom: 20px;"></i>
@@ -1474,7 +1458,7 @@
             </div>
 
             <!-- Transporte público -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-amarillo);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
                 <div class="transport-icon mb-3">
                   <i class="lni lni-bus" style="font-size: 3rem; color: var(--uc-amarillo); margin-bottom: 20px;"></i>
@@ -1487,47 +1471,46 @@
                 </div>
               </div>
             </div>
-
-            <!-- Taxi/Uber -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-gris-oscuro);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
-                <div class="transport-icon mb-3">
-                  <i class="lni lni-taxi" style="font-size: 3rem; color: var(--uc-gris-oscuro); margin-bottom: 20px;"></i>
-                </div>
-                <h5 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 15px; font-size: 1.3rem;">Taxi / Uber</h5>
-                <div class="transport-details">
-                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Disponible 24/7</p>
-                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Desde el aeropuerto</p>
-                  <p style="color: var(--uc-gris-oscuro); margin: 0; font-weight: 600; font-size: 0.9rem;">Directo al campus</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <!-- Información adicional -->
+          <!-- Recomendaciones para visitantes -->
           <div class="row mt-5">
             <div class="col-lg-8 mx-auto">
               <div class="additional-transport-info" style="background: var(--uc-gris-claro); padding: 30px; border-radius: 15px; border-left: 5px solid var(--uc-celeste);">
                 <h6 style="color: var(--uc-azul-oscuro); margin-bottom: 15px; font-weight: 600;">
                   <i class="lni lni-information" style="margin-right: 8px; color: var(--uc-celeste);"></i>
-                  Información Adicional
+                  Información Importante para Visitantes
                 </h6>
                 <div class="row">
                   <div class="col-md-6">
                     <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
-                      <strong>Dirección completa:</strong><br>
-                      Vicuña Mackenna 4860, Macul, Santiago
+                      <strong>Acreditación:</strong><br>
+                      Llegar 30 minutos antes del inicio
                     </p>
                   </div>
                   <div class="col-md-6">
                     <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
-                      <strong>Horario del evento:</strong><br>
-                      15 y 16 de Octubre, 9:00 - 18:00 hrs
+                      <strong>Estacionamiento:</strong><br>
+                      Disponible en el campus (gratuito)
+                    </p>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-6">
+                    <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+                      <strong>Acceso desde Metro:</strong><br>
+                      Salida por calle Vicuña Mackenna
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+                      <strong>Cafeterías:</strong><br>
+                      Disponibles en el campus
                     </p>
                   </div>
                 </div>
                 <p style="margin: 15px 0 0 0; font-size: 0.85rem; color: var(--uc-azul); font-style: italic;">
-                  Recomendamos llegar 30 minutos antes del inicio de las actividades para el proceso de acreditación.
+                  Para consultas sobre accesibilidad o necesidades especiales, contactar al comité organizador.
                 </p>
               </div>
             </div>
@@ -1551,23 +1534,27 @@
           </div>
         </div>
 
-        <!-- Overlay con información adicional -->
-        <div class="map-overlay position-absolute" style="top: 20px; left: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 300px;">
-          <h6 style="color: var(--uc-azul-oscuro); margin-bottom: 10px; font-weight: 600;">IX Jornadas de Postcosecha</h6>
-          <p style="margin: 0; font-size: 0.9rem; color: #666;">
-            <i class="fa fa-calendar-alt me-2" style="color: var(--uc-azul-medio);"></i>
-            13 y 14 de noviembre, 2024
+        <!-- Overlay con información del evento -->
+        <div class="map-overlay position-absolute" style="top: 20px; left: 20px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); max-width: 350px; border-left: 4px solid var(--uc-celeste);">
+          <h6 style="color: var(--uc-azul-oscuro); margin-bottom: 12px; font-weight: 700; font-size: 1.1rem;">IX Jornadas de Postcosecha Chile 2025</h6>
+          <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+            <i class="lni lni-calendar" style="color: var(--uc-celeste); margin-right: 8px;"></i>
+            15 y 16 de Octubre, 2025
           </p>
-          <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">
-            <i class="fa fa-clock me-2" style="color: var(--uc-azul-medio);"></i>
+          <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+            <i class="lni lni-timer" style="color: var(--uc-celeste); margin-right: 8px;"></i>
             9:00 AM - 6:00 PM
+          </p>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+            <i class="lni lni-map-marker" style="color: var(--uc-celeste); margin-right: 8px;"></i>
+            Campus San Joaquín UC
           </p>
         </div>
       </div>
 
 
     </section>
-    <!-- Sección de mapa fin -->
+    <!-- Sección de ubicación y transporte fin -->
 
     <!-- Sección de pie de página inicio -->
     <footer class="uc-footer" style="background-color: var(--uc-azul-oscuro); padding: 60px 0 0;">
