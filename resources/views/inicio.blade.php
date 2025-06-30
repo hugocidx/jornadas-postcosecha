@@ -1368,6 +1368,8 @@
 
     <!-- Sección de mapa inicio -->
     <section id="google-map-area" style="position: relative; overflow: hidden;">
+
+
       <!-- Información del venue -->
       <div class="venue-info-section" style="background: linear-gradient(135deg, var(--uc-azul-claro) 0%, var(--uc-azul-medio) 100%); padding: 80px 0; color: white;">
         <div class="container">
@@ -1396,21 +1398,136 @@
                     </div>
                   </div>
                 </div>
-                <div class="mt-4">
+                <!-- <div class="mt-4">
                   <a href="https://goo.gl/maps/your-uc-campus-link" target="_blank" class="btn btn-outline-light btn-lg">
                     <i class="fa fa-external-link-alt me-2"></i>Ver en Google Maps
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="col-lg-6">
               <div class="venue-image text-center">
-                <img src="{{ asset('assets/img/uc-campus-san-joaquin.jpg') }}" 
-                     alt="Campus San Joaquín UC" 
-                     class="img-fluid rounded shadow-lg"
-                     style="max-width: 100%; height: auto; object-fit: cover;">
-                <p class="mt-3 text-white" style="opacity: 0.8; font-size: 0.9rem;">
-                  Campus San Joaquín - Pontificia Universidad Católica de Chile
+                <div class="venue-visual mb-4">
+                  <!-- Placeholder para imagen del campus -->
+                  <div class="campus-placeholder" style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 60px 20px; border: 2px dashed rgba(255,255,255,0.3);">
+                    <i class="lni lni-university" style="font-size: 4rem; color: rgba(255,255,255,0.7); margin-bottom: 20px;"></i>
+                    <p class="text-white mb-0" style="opacity: 0.8; font-size: 1.1rem; font-weight: 500;">
+                      Campus San Joaquín
+                    </p>
+                    <p class="text-white mb-0" style="opacity: 0.6; font-size: 0.9rem;">
+                      Pontificia Universidad Católica de Chile
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Botón para ver en Google Maps -->
+                <div class="mt-3">
+                  <a href="https://goo.gl/maps/UC-campus-san-joaquin" target="_blank" class="btn btn-outline-light btn-lg" style="border: 2px solid rgba(255,255,255,0.8); padding: 12px 30px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'; this.style.borderColor='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.8)'">
+                    <i class="lni lni-map-marker" style="margin-right: 8px;"></i>Ver en Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información de transporte -->
+      <div class="transport-info-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 60px 0;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center mb-5">
+              <h3 style="color: var(--uc-azul-oscuro); font-weight: 700; font-size: 2.2rem; margin-bottom: 15px;">Cómo llegar</h3>
+              <p style="color: var(--uc-gris-oscuro); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Encuentra la mejor forma de llegar al Campus San Joaquín para las IX Jornadas de Postcosecha</p>
+            </div>
+          </div>
+          
+          <div class="row justify-content-center">
+            <!-- Metro -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-celeste);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
+                <div class="transport-icon mb-3">
+                  <i class="lni lni-train" style="font-size: 3rem; color: var(--uc-celeste); margin-bottom: 20px;"></i>
+                </div>
+                <h5 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 15px; font-size: 1.3rem;">Metro</h5>
+                <div class="transport-details">
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;"><strong>Línea 5</strong></p>
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Estación San Joaquín</p>
+                  <p style="color: var(--uc-celeste); margin: 0; font-weight: 600; font-size: 0.9rem;">5 min caminando</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auto particular -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-azul);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
+                <div class="transport-icon mb-3">
+                  <i class="lni lni-car" style="font-size: 3rem; color: var(--uc-azul); margin-bottom: 20px;"></i>
+                </div>
+                <h5 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 15px; font-size: 1.3rem;">Auto Particular</h5>
+                <div class="transport-details">
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Estacionamiento disponible</p>
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">En el campus</p>
+                  <p style="color: var(--uc-azul); margin: 0; font-weight: 600; font-size: 0.9rem;">Acceso directo</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transporte público -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-amarillo);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
+                <div class="transport-icon mb-3">
+                  <i class="lni lni-bus" style="font-size: 3rem; color: var(--uc-amarillo); margin-bottom: 20px;"></i>
+                </div>
+                <h5 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 15px; font-size: 1.3rem;">Bus/Micro</h5>
+                <div class="transport-details">
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Múltiples recorridos</p>
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Por Vicuña Mackenna</p>
+                  <p style="color: var(--uc-amarillo); margin: 0; font-weight: 600; font-size: 0.9rem;">Parada cercana</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Taxi/Uber -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="transport-card h-100" style="background: white; padding: 35px 25px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border-top: 4px solid var(--uc-gris-oscuro);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'">
+                <div class="transport-icon mb-3">
+                  <i class="lni lni-taxi" style="font-size: 3rem; color: var(--uc-gris-oscuro); margin-bottom: 20px;"></i>
+                </div>
+                <h5 style="color: var(--uc-azul-oscuro); font-weight: 600; margin-bottom: 15px; font-size: 1.3rem;">Taxi / Uber</h5>
+                <div class="transport-details">
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Disponible 24/7</p>
+                  <p style="color: var(--uc-gris-oscuro); margin-bottom: 8px; font-size: 0.95rem;">Desde el aeropuerto</p>
+                  <p style="color: var(--uc-gris-oscuro); margin: 0; font-weight: 600; font-size: 0.9rem;">Directo al campus</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Información adicional -->
+          <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+              <div class="additional-transport-info" style="background: var(--uc-gris-claro); padding: 30px; border-radius: 15px; border-left: 5px solid var(--uc-celeste);">
+                <h6 style="color: var(--uc-azul-oscuro); margin-bottom: 15px; font-weight: 600;">
+                  <i class="lni lni-information" style="margin-right: 8px; color: var(--uc-celeste);"></i>
+                  Información Adicional
+                </h6>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+                      <strong>Dirección completa:</strong><br>
+                      Vicuña Mackenna 4860, Macul, Santiago
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <p style="margin-bottom: 8px; font-size: 0.9rem; color: var(--uc-gris-oscuro);">
+                      <strong>Horario del evento:</strong><br>
+                      15 y 16 de Octubre, 9:00 - 18:00 hrs
+                    </p>
+                  </div>
+                </div>
+                <p style="margin: 15px 0 0 0; font-size: 0.85rem; color: var(--uc-azul); font-style: italic;">
+                  Recomendamos llegar 30 minutos antes del inicio de las actividades para el proceso de acreditación.
                 </p>
               </div>
             </div>
@@ -1448,32 +1565,7 @@
         </div>
       </div>
 
-      <!-- Información de transporte -->
-      <div class="transport-info" style="background: #f8f9fa; padding: 40px 0;">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h4 class="text-center mb-4" style="color: var(--uc-azul-oscuro); font-weight: 600;">Cómo llegar</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 text-center mb-3">
-              <div class="transport-item p-3">
-                <i class="fa fa-subway" style="font-size: 2rem; color: var(--uc-azul-medio); margin-bottom: 15px;"></i>
-                <h6 style="color: var(--uc-azul-oscuro); font-weight: 600;">Metro</h6>
-                <p style="color: #666; font-size: 0.9rem; margin: 0;">Línea 5 - Estación San Joaquín<br>Caminata de 5 minutos</p>
-              </div>
-            </div>
-            <div class="col-md-4 text-center mb-3">
-              <div class="transport-item p-3">
-                <i class="fa fa-car" style="font-size: 2rem; color: var(--uc-azul-medio); margin-bottom: 15px;"></i>
-                <h6 style="color: var(--uc-azul-oscuro); font-weight: 600;">Auto</h6>
-                <p style="color: #666; font-size: 0.9rem; margin: 0;">Estacionamiento disponible<br>en el campus</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </section>
     <!-- Sección de mapa fin -->
 
@@ -1578,22 +1670,23 @@
       </div>
     </div>    
 
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="{{ asset('assets/js/vendor/modernizr-3.7.1.min.js') }}"></script>
-<script src="{{ asset('assets/js/vendor/jquery-3.5.1-min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap-4.5.0.min.js') }}"></script>
-<script src="{{ asset('assets/js/classie.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.mixitup.js') }}"></script>
-<script src="{{ asset('assets/js/owl.carousel.2.3.4.min.js') }}"></script>
-<script src="{{ asset('assets/js/wow.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.vide.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-<script src="{{ asset('assets/js/form-validator.min.js') }}"></script>
-<script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
-<script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="{{ asset('assets/js/vendor/modernizr-3.7.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery-3.5.1-min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap-4.5.0.min.js') }}"></script>
+        <script src="{{ asset('assets/js/classie.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.mixitup.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.2.3.4.min.js') }}"></script>
+        <script src="{{ asset('assets/js/wow.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.vide.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/js/form-validator.min.js') }}"></script>
+        <script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
 </body>
 </html>
