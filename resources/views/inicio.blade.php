@@ -208,6 +208,54 @@
   .transport-card {
     animation: fadeInUp 0.8s ease-out;
     animation-fill-mode: both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efecto de resplandor sutil al hover */
+  .transport-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(1, 118, 222, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+  }
+
+  .transport-card:hover::before {
+    left: 100%;
+  }
+
+  /* Efectos de hover mejorados para cada tipo de transporte */
+  .transport-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12) !important;
+  }
+
+  /* Efectos específicos por color de transporte */
+  .transport-card[style*="border-top: 4px solid var(--uc-celeste)"]:hover {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(1, 118, 222, 0.05) 100%) !important;
+  }
+
+  .transport-card[style*="border-top: 4px solid var(--uc-azul)"]:hover {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(23, 63, 138, 0.05) 100%) !important;
+  }
+
+  .transport-card[style*="border-top: 4px solid var(--uc-amarillo)"]:hover {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(254, 198, 13, 0.05) 100%) !important;
+  }
+
+  /* Efecto de pulsación sutil en los iconos */
+  .transport-icon i {
+    transition: all 0.3s ease;
+  }
+
+  .transport-card:hover .transport-icon i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
   }
 
   .transport-card:nth-child(1) { animation-delay: 0.1s; }
@@ -240,6 +288,48 @@
       opacity: 1;
       transform: translateX(0);
     }
+  }
+
+  /* Efectos sutiles para los detalles de transporte */
+  .transport-details p {
+    transition: all 0.3s ease;
+  }
+
+  .transport-card:hover .transport-details p:last-child {
+    transform: translateY(-2px);
+    font-weight: 700;
+  }
+
+  /* Animación sutil de entrada para los títulos de transporte */
+  .transport-card h5 {
+    transition: all 0.3s ease;
+  }
+
+  .transport-card:hover h5 {
+    transform: translateY(-1px);
+    letter-spacing: 0.5px;
+  }
+
+  /* Efecto de borde animado */
+  .transport-card {
+    position: relative;
+  }
+
+  .transport-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--uc-celeste), var(--uc-azul), var(--uc-amarillo));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .transport-card:hover::after {
+    opacity: 0.3;
   }
 </style>
                                                                                                    
