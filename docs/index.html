@@ -291,6 +291,171 @@
       .transport-card:hover::after {
         opacity: 0.3;
       }
+
+      /* Animaciones para las tarjetas de "¿Por qué participar?" */
+      @keyframes fadeInBounce {
+        0% {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        60% {
+          opacity: 0.8;
+          transform: translateY(-5px) scale(1.02);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes iconPulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .featured-box {
+        animation: fadeInBounce 0.8s ease-out;
+        animation-fill-mode: both;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Retraso escalonado para cada tarjeta */
+      .featured-box:nth-child(1) { animation-delay: 0.1s; }
+      .featured-box:nth-child(2) { animation-delay: 0.2s; }
+      .featured-box:nth-child(3) { animation-delay: 0.3s; }
+      .featured-box:nth-child(4) { animation-delay: 0.4s; }
+      .featured-box:nth-child(5) { animation-delay: 0.5s; }
+      .featured-box:nth-child(6) { animation-delay: 0.6s; }
+
+      .featured-box:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      }
+
+      .featured-box:hover .featured-icon i {
+        animation: iconPulse 0.6s ease infinite;
+        color: #0176de;
+      }
+
+      /* Efecto de resplandor sutil en hover */
+      .featured-box::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(1, 118, 222, 0.05), transparent);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        opacity: 0;
+        z-index: 0;
+      }
+
+      .featured-box:hover::before {
+        opacity: 1;
+        animation: shimmer 1.5s ease infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) rotate(45deg); }
+      }
+
+      /* Animaciones para las tarjetas de Inscripciones */
+      @keyframes priceCardBounce {
+        0% {
+          opacity: 0;
+          transform: translateY(40px) scale(0.9);
+        }
+        50% {
+          opacity: 0.8;
+          transform: translateY(-10px) scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes priceGlow {
+        0% {
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        50% {
+          box-shadow: 0 12px 35px rgba(1, 118, 222, 0.15);
+        }
+        100% {
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+      }
+
+      .pricing-table {
+        animation: priceCardBounce 0.9s ease-out;
+        animation-fill-mode: both;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Retraso escalonado para cada tarjeta de precio */
+      .pricing-table:nth-child(1) { animation-delay: 0.2s; }
+      .pricing-table:nth-child(2) { animation-delay: 0.4s; }
+      .pricing-table:nth-child(3) { animation-delay: 0.6s; }
+
+      /* Efecto especial para la tarjeta destacada */
+      .pricing-table.pricing-big {
+        animation: priceCardBounce 1s ease-out, priceGlow 3s infinite ease-in-out 1.5s;
+      }
+
+      .pricing-table:hover {
+        transform: translateY(-12px) scale(1.04);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      }
+
+      .pricing-table.pricing-big:hover {
+        transform: translateY(-15px) scale(1.06);
+        box-shadow: 0 25px 50px rgba(1, 118, 222, 0.2);
+      }
+
+      /* Efecto de gradiente animado en hover */
+      .pricing-table::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(1, 118, 222, 0.08), transparent);
+        transition: left 0.8s ease;
+        z-index: 1;
+      }
+
+      .pricing-table:hover::before {
+        left: 100%;
+      }
+
+      /* Animación para el texto del precio */
+      .pricing-table:hover .price {
+        color: #0176de;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+      }
+
+      .pricing-table:hover .btn {
+        background: #173f8a;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(23, 63, 138, 0.3);
+      }
     </style>
 </head>
 
