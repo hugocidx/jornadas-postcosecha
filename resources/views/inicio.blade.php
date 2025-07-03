@@ -722,8 +722,6 @@
   </head>
   
   <body>
-    <!-- Header Section Start -->
-    <header id="slider-area">  
     <!-- HEADER UC -->
     <header class="uc-header">
       <div id="uc-global-topbar"></div>
@@ -776,7 +774,7 @@
         <div class="uc-navbar_mobile d-block d-lg-none">
           <div class="uc-navbar_mobile-bar navbar-brand">
             <div class="uc-navbar_mobile-logo navbar-light">
-              <div class="h2 text-font--serif text-color--blue">Título</div>
+              <div class="h2 text-font--serif text-color--blue">IX JORNADAS DE POSTCOSECHA</div>
             </div>
             <a
               href="javascript:void(0);"
@@ -792,7 +790,8 @@
             data-toggle="collapseMobileNav3"
             data-open="false"
             style="height: 0"
-          >             <div class="uc-navbar_mobile-list">
+          >
+            <div class="uc-navbar_mobile-list">
                <a href="#slider-area" class="list-item page-scroll">Inicio</a>
                <a href="#services" class="list-item page-scroll">Jornadas</a>
                <a href="#features" class="list-item page-scroll">Beneficios</a>
@@ -807,7 +806,8 @@
       </nav>
     </header>
 
-      <!-- Main Carousel Section -->
+    <!-- Main Carousel Section -->
+    <section id="slider-area">
       <div id="carousel-area">
         <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -855,9 +855,7 @@
           </a>
         </div>
       </div>  
-
-    </header>
-    <!-- Header Section End --> 
+    </section> 
 
     <!-- Services Section Start -->
     <section id="services" class="section">
