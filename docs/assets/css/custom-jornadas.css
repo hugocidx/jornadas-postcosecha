@@ -536,7 +536,7 @@ html.header-scrolled {
 
 /* Estado scroll - solo menu visible */
 .uc-header.header-compact {
-  height: 60px; /* Altura fija para solo el menú */
+  height: 80px; /* Altura fija para solo el menú */
 }
 
 /* Ocultar logo, título y slogan cuando está compacto */
