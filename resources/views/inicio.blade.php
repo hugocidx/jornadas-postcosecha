@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="author" content="Grayrids">
+
     <title>Jornadas de Postcosecha</title>
 
       <!-- Bootstrap CSS -->
@@ -17,6 +18,11 @@
         <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+        <link
+  rel="stylesheet"
+  href="https://kit-digital-uc-prod.s3.amazonaws.com/uc-kitdigital/css/uc-kitdigital.css"
+/>
+
       <!-- Bootstrap CSS -->
 
 <!-- Custom CSS for carousel images -->
@@ -667,7 +673,110 @@
   <body>
     <!-- Header Section Start -->
     <header id="slider-area">  
-      <div class="navigation navigation-two">
+
+
+
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+    <!-- DEMO -->
+
+    <!-- HEADER UC -->
+    <header class="uc-header">
+      <div id="uc-global-topbar"></div>
+      <nav class="uc-navbar">
+        <!-- Menú para versión Escritorio -->
+        <div class="container d-none d-lg-block">
+          <div class="row">
+            <div class="col-lg-3 col-xl-2">
+              <img
+                src="https://kit-digital-uc-prod.s3.amazonaws.com/assets/logo-uc-azul.svg"
+                alt="Pontificia Universidad Católica de Chile"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9 pl-60">
+              <div class="h2 text-font--serif text-color--blue mt-24">IX JORNADAS DE POSTCOSECHA</div>
+              <div class="text-color--gray p-size--lg">
+                Facultad de Agronomía y Sistemas Naturales UC • 15 y 16 de Octubre 2025
+              </div>
+            </div>
+          </div>           <ul class="uc-navbar_nav">
+             <li class="nav-item">
+               <a href="#slider-area" class="uc-btn btn-inline page-scroll">Inicio</a>
+             </li>
+             <li class="nav-item">
+               <a href="#services" class="uc-btn btn-inline page-scroll">Jornadas</a>
+             </li>
+             <li class="nav-item">
+               <a href="#features" class="uc-btn btn-inline page-scroll">Beneficios</a>
+             </li>
+             <li class="nav-item">
+               <a href="#portfolios" class="uc-btn btn-inline page-scroll">Programa</a>
+             </li>
+             <li class="nav-item">
+               <a href="#pricing" class="uc-btn btn-inline page-scroll">Inscripciones</a>
+             </li>
+             <li class="nav-item">
+               <a href="#team" class="uc-btn btn-inline page-scroll">Exponentes</a>
+             </li>
+             <li class="nav-item">
+               <a href="#subscribe" class="uc-btn btn-inline page-scroll">Auspiciadores</a>
+             </li>
+             <li class="nav-item">
+               <a href="#contact" class="uc-btn btn-inline page-scroll">Contacto</a>
+             </li>
+           </ul>
+        </div>
+        <!-- Menú para versión Móvil -->
+        <div class="uc-navbar_mobile d-block d-lg-none">
+          <div class="uc-navbar_mobile-bar navbar-brand">
+            <div class="uc-navbar_mobile-logo navbar-light">
+              <div class="h2 text-font--serif text-color--blue">IX Jornadas de Postcosecha</div>
+            </div>
+            <a
+              href="javascript:void(0);"
+              class="uc-navbar_mobile-button"
+              data-collapse="collapseMobileNav3"
+            >
+              <span class="uc-icon"></span>
+              Menú
+            </a>
+          </div>
+          <div
+            class="uc-navbar_mobile-content"
+            data-toggle="collapseMobileNav3"
+            data-open="false"
+            style="height: 0"
+          >             <div class="uc-navbar_mobile-list">
+               <a href="#slider-area" class="list-item page-scroll">Inicio</a>
+               <a href="#services" class="list-item page-scroll">Jornadas</a>
+               <a href="#features" class="list-item page-scroll">Beneficios</a>
+               <a href="#portfolios" class="list-item page-scroll">Programa</a>
+               <a href="#pricing" class="list-item page-scroll">Inscripciones</a>
+               <a href="#team" class="list-item page-scroll">Exponentes</a>
+               <a href="#subscribe" class="list-item page-scroll">Auspiciadores</a>
+               <a href="#contact" class="list-item page-scroll">Contacto</a>
+             </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HEADER con javascript - OCULTO -->
+      <div class="navigation navigation-two" style="display: none;">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html"><span class="lni lni-bulb"></span>IX JORNADAS DE POSTCOSECHA</a>
@@ -676,7 +785,6 @@
                     <span class="toggler-icon"></span>
                     <span class="toggler-icon"></span>
                 </button>
-
                 <!-- Panel superior -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
@@ -1843,6 +1951,76 @@
         <script src="{{ asset('assets/js/form-validator.min.js') }}"></script>
         <script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="https://kit-digital-uc-prod.s3.amazonaws.com/uc-kitdigital/js/uc-kitdigital.js"></script>
+
+        <!-- JavaScript adicional para el header UC -->
+        <script>
+        $(document).ready(function() {
+            // Funcionalidad del menú móvil UC
+            $('.uc-navbar_mobile-button').on('click', function(e) {
+                e.preventDefault();
+                var targetCollapse = $(this).data('collapse');
+                var content = $('[data-toggle="' + targetCollapse + '"]');
+                var isOpen = content.data('open');
+                
+                if (isOpen) {
+                    // Cerrar menú
+                    content.animate({height: 0}, 300, function() {
+                        content.data('open', false);
+                    });
+                    $(this).removeClass('active');
+                } else {
+                    // Abrir menú
+                    var scrollHeight = content[0].scrollHeight;
+                    content.animate({height: scrollHeight}, 300, function() {
+                        content.data('open', true);
+                    });
+                    $(this).addClass('active');
+                }
+            });
+
+            // Cerrar menú móvil al hacer clic en un enlace
+            $('.uc-navbar_mobile-list .list-item').on('click', function() {
+                var content = $('.uc-navbar_mobile-content');
+                var button = $('.uc-navbar_mobile-button');
+                
+                content.animate({height: 0}, 300, function() {
+                    content.data('open', false);
+                });
+                button.removeClass('active');
+            });
+
+            // Smooth scroll específico para el header UC (por si acaso)
+            $('.uc-navbar_nav .page-scroll, .uc-navbar_mobile-list .page-scroll').click(function () {
+                var hash = this.hash;
+                if (hash) {
+                    var position = $(hash).offset().top - 80;
+                    $('html, body').animate({
+                        scrollTop: position
+                    }, 900);
+                }
+                return false;
+            });
+
+            // Marcar como activo el enlace correspondiente según el scroll
+            $(window).scroll(function () {
+                var scrollbarLocation = $(this).scrollTop();
+                
+                $('.uc-navbar_nav .page-scroll, .uc-navbar_mobile-list .page-scroll').each(function () {
+                    var hash = this.hash;
+                    if (hash && $(hash).length) {
+                        var sectionOffset = $(hash).offset().top - 100;
+                        
+                        if (sectionOffset <= scrollbarLocation) {
+                            $(this).parent().addClass('active');
+                            $(this).parent().siblings().removeClass('active');
+                        }
+                    }
+                });
+            });
+        });
+        </script>
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
 </body>
