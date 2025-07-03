@@ -22,7 +22,9 @@
   // for menu scroll 
   $('.page-scroll').click(function () {
     var hash = this.hash;
-    var position = $(hash).offset().top - 60;
+    // Ajustar offset para el header UC fijo (130px en escritorio, 90px en móvil)
+    var offset = window.innerWidth > 991 ? 130 : 90;
+    var position = $(hash).offset().top - offset;
     $('html').animate({
       scrollTop: position
     }, 900);
@@ -36,8 +38,9 @@
     var scrollbarLocation = $(this).scrollTop();
 
     scrollLink.each(function () {
-
-      var sectionOffset = $(this.hash).offset().top - 73;
+      // Ajustar offset para el header UC fijo
+      var offset = window.innerWidth > 991 ? 130 : 90;
+      var sectionOffset = $(this.hash).offset().top - offset;
 
       if (sectionOffset <= scrollbarLocation) {
         $(this).parent().addClass('active');

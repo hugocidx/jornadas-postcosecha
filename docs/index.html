@@ -683,6 +683,42 @@
   .list-item.page-scroll:hover {
     color: var(--uc-celeste) !important;
   }
+
+  /* Header UC sticky/fixed position */
+  .uc-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Ajustar el body para compensar el header fijo */
+  body {
+    padding-top: 120px; /* Ajustar segÃºn la altura del header UC */
+  }
+
+  /* Para pantallas mÃ³viles */
+  @media (max-width: 991px) {
+    body {
+      padding-top: 80px; /* Menos espacio en mÃ³vil */
+    }
+  }
+
+  /* Asegurar que el scroll llegue a la posiciÃ³n correcta */
+  .section {
+    scroll-margin-top: 130px; /* Compensar la altura del header fijo */
+  }
+
+  @media (max-width: 991px) {
+    .section {
+      scroll-margin-top: 90px;
+    }
+  }
 </style>
                                                                                                    
   </head>
@@ -791,49 +827,6 @@
         </div>
       </nav>
     </header>
-
-    <!-- HEADER con javascript -->
-      <div class="navigation navigation-two">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html"><span class="lni lni-bulb"></span>IX JORNADAS DE POSTCOSECHA</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                </button>
-                <!-- Panel superior -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="page-scroll" href="#slider-area">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#services">Jornadas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#features">Beneficios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#portfolios">Programa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#pricing">Inscripciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#team">Exponentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#subscribe">Auspiciadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#contact">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
 
       <!-- Main Carousel Section -->
       <div id="carousel-area">

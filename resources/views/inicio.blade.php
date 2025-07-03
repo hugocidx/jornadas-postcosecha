@@ -666,6 +666,59 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(23, 63, 138, 0.3);
   }
+
+  /* Scroll suave para todos los enlaces de navegación */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Estilos adicionales para el header UC para que funcione con el scroll */
+  .uc-btn.page-scroll,
+  .list-item.page-scroll {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .uc-btn.page-scroll:hover,
+  .list-item.page-scroll:hover {
+    color: var(--uc-celeste) !important;
+  }
+
+  /* Header UC sticky/fixed position */
+  .uc-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Ajustar el body para compensar el header fijo */
+  body {
+    padding-top: 120px; /* Ajustar según la altura del header UC */
+  }
+
+  /* Para pantallas móviles */
+  @media (max-width: 991px) {
+    body {
+      padding-top: 80px; /* Menos espacio en móvil */
+    }
+  }
+
+  /* Asegurar que el scroll llegue a la posición correcta */
+  .section {
+    scroll-margin-top: 130px; /* Compensar la altura del header fijo */
+  }
+
+  @media (max-width: 991px) {
+    .section {
+      scroll-margin-top: 90px;
+    }
+  }
 </style>
                                                                                                    
   </head>
@@ -710,7 +763,7 @@
             <div class="col-lg-8 col-xl-9 pl-60">
               <div class="h2 text-font--serif text-color--blue mt-24">IX JORNADAS DE POSTCOSECHA</div>
               <div class="text-color--gray p-size--lg">
-                Facultad de Agronomía y Sistemas Naturales UC • 15 y 16 de Octubre 2025
+                Slogan o bajada que describe la propuesta de valor del sitio
               </div>
             </div>
           </div>           <ul class="uc-navbar_nav">
@@ -744,7 +797,7 @@
         <div class="uc-navbar_mobile d-block d-lg-none">
           <div class="uc-navbar_mobile-bar navbar-brand">
             <div class="uc-navbar_mobile-logo navbar-light">
-              <div class="h2 text-font--serif text-color--blue">IX Jornadas de Postcosecha</div>
+              <div class="h2 text-font--serif text-color--blue">Título</div>
             </div>
             <a
               href="javascript:void(0);"
@@ -774,49 +827,6 @@
         </div>
       </nav>
     </header>
-
-    <!-- HEADER con javascript - OCULTO -->
-      <div class="navigation navigation-two" style="display: none;">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html"><span class="lni lni-bulb"></span>IX JORNADAS DE POSTCOSECHA</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                </button>
-                <!-- Panel superior -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="page-scroll" href="#slider-area">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#services">Jornadas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#features">Beneficios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#portfolios">Programa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#pricing">Inscripciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#team">Exponentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#subscribe">Auspiciadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#contact">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
 
       <!-- Main Carousel Section -->
       <div id="carousel-area">
@@ -1952,74 +1962,6 @@
         <script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <script src="https://kit-digital-uc-prod.s3.amazonaws.com/uc-kitdigital/js/uc-kitdigital.js"></script>
-
-        <!-- JavaScript adicional para el header UC -->
-        <script>
-        $(document).ready(function() {
-            // Funcionalidad del menú móvil UC
-            $('.uc-navbar_mobile-button').on('click', function(e) {
-                e.preventDefault();
-                var targetCollapse = $(this).data('collapse');
-                var content = $('[data-toggle="' + targetCollapse + '"]');
-                var isOpen = content.data('open');
-                
-                if (isOpen) {
-                    // Cerrar menú
-                    content.animate({height: 0}, 300, function() {
-                        content.data('open', false);
-                    });
-                    $(this).removeClass('active');
-                } else {
-                    // Abrir menú
-                    var scrollHeight = content[0].scrollHeight;
-                    content.animate({height: scrollHeight}, 300, function() {
-                        content.data('open', true);
-                    });
-                    $(this).addClass('active');
-                }
-            });
-
-            // Cerrar menú móvil al hacer clic en un enlace
-            $('.uc-navbar_mobile-list .list-item').on('click', function() {
-                var content = $('.uc-navbar_mobile-content');
-                var button = $('.uc-navbar_mobile-button');
-                
-                content.animate({height: 0}, 300, function() {
-                    content.data('open', false);
-                });
-                button.removeClass('active');
-            });
-
-            // Smooth scroll específico para el header UC (por si acaso)
-            $('.uc-navbar_nav .page-scroll, .uc-navbar_mobile-list .page-scroll').click(function () {
-                var hash = this.hash;
-                if (hash) {
-                    var position = $(hash).offset().top - 80;
-                    $('html, body').animate({
-                        scrollTop: position
-                    }, 900);
-                }
-                return false;
-            });
-
-            // Marcar como activo el enlace correspondiente según el scroll
-            $(window).scroll(function () {
-                var scrollbarLocation = $(this).scrollTop();
-                
-                $('.uc-navbar_nav .page-scroll, .uc-navbar_mobile-list .page-scroll').each(function () {
-                    var hash = this.hash;
-                    if (hash && $(hash).length) {
-                        var sectionOffset = $(hash).offset().top - 100;
-                        
-                        if (sectionOffset <= scrollbarLocation) {
-                            $(this).parent().addClass('active');
-                            $(this).parent().siblings().removeClass('active');
-                        }
-                    }
-                });
-            });
-        });
-        </script>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
