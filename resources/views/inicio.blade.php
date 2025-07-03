@@ -724,26 +724,6 @@
   <body>
     <!-- Header Section Start -->
     <header id="slider-area">  
-
-
-
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-    <!-- DEMO -->
-
     <!-- HEADER UC -->
     <header class="uc-header">
       <div id="uc-global-topbar"></div>
