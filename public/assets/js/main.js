@@ -2,13 +2,27 @@
 
   "use strict";
 
-  //===== Prealoder
+  //===== Prealoder e inicialización
 
   $(window).on('load', function (event) {
     $('#loader').fadeOut();
+    
+    // Inicializar estado del header
+    $('.uc-header').addClass('header-visible');
+    var currentScroll = $(window).scrollTop();
+    if (currentScroll > headerHeight) {
+      $('.uc-header').removeClass('header-visible').addClass('header-compact');
+      $('body').addClass('header-scrolled');
+      $('html').addClass('header-scrolled');
+      isHeaderCompact = true;
+    }
   });
 
-  //===== Sticky header (solo para compatibilidad con otros headers)
+  //===== Header UC inteligente con menú compacto
+
+  var headerHeight = 160; // Altura aproximada del header UC
+  var lastScrollTop = 0;
+  var isHeaderCompact = false;
 
   $(window).on('scroll', function (event) {
     var scroll = $(window).scrollTop();
@@ -19,6 +33,23 @@
     } else {
       $(".navigation").addClass("sticky");
     }
+
+    // Lógica para el header UC
+    if (scroll > headerHeight && !isHeaderCompact) {
+      // Activar modo compacto
+      $('.uc-header').removeClass('header-visible').addClass('header-compact');
+      $('body').addClass('header-scrolled');
+      $('html').addClass('header-scrolled');
+      isHeaderCompact = true;
+    } else if (scroll <= headerHeight && isHeaderCompact) {
+      // Volver a header completo
+      $('.uc-header').removeClass('header-compact').addClass('header-visible');
+      $('body').removeClass('header-scrolled');
+      $('html').removeClass('header-scrolled');
+      isHeaderCompact = false;
+    }
+
+    lastScrollTop = scroll;
   });
 
   // for menu scroll - Optimizado para respuesta rápida
@@ -34,8 +65,16 @@
       $(this).addClass('active-click');
       setTimeout(() => $(this).removeClass('active-click'), 200);
       
-      // Ajustar offset para el header UC fijo (180px en escritorio, 100px en móvil)
-      var offset = window.innerWidth > 991 ? 180 : 100;
+      // Determinar offset basado en el estado actual del header
+      var offset;
+      if (isHeaderCompact || $(window).scrollTop() > headerHeight) {
+        // Header compacto - solo menú visible
+        offset = window.innerWidth > 991 ? 60 : 50;
+      } else {
+        // Header completo visible
+        offset = window.innerWidth > 991 ? 180 : 100;
+      }
+      
       var position = $target.offset().top - offset;
       
       // Usar animación optimizada con fallback
@@ -64,8 +103,16 @@
     var scrollbarLocation = $(this).scrollTop();
 
     scrollLink.each(function () {
-      // Ajustar offset para el header UC fijo
-      var offset = window.innerWidth > 991 ? 180 : 100;
+      // Determinar offset basado en el estado actual del header
+      var offset;
+      if (isHeaderCompact || scrollbarLocation > headerHeight) {
+        // Header compacto - solo menú visible
+        offset = window.innerWidth > 991 ? 60 : 50;
+      } else {
+        // Header completo visible
+        offset = window.innerWidth > 991 ? 180 : 100;
+      }
+      
       var sectionOffset = $(this.hash).offset().top - offset;
 
       if (sectionOffset <= scrollbarLocation) {

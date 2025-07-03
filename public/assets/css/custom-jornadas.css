@@ -477,12 +477,22 @@ a:hover {
 /* Scroll suave optimizado para mejor rendimiento */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 180px; /* Compensar header fijo automáticamente */
+  scroll-padding-top: 180px; /* Compensar header fijo inicialmente */
+  transition: scroll-padding-top 0.4s ease;
+}
+
+/* Cuando el header está compacto */
+html.header-scrolled {
+  scroll-padding-top: 60px; /* Solo compensar el menú compacto */
 }
 
 @media (max-width: 991px) {
   html {
     scroll-padding-top: 100px;
+  }
+  
+  html.header-scrolled {
+    scroll-padding-top: 50px;
   }
 }
 
@@ -506,7 +516,7 @@ html {
   background-color: rgba(1, 118, 222, 0.1);
 }
 
-/* Header UC sticky/fixed position - mantener diseño original */
+/* Header UC con navegación inteligente */
 .uc-header {
   position: fixed !important;
   top: 0;
@@ -516,18 +526,69 @@ html {
   z-index: 1000;
   background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
-/* Ajustar el body para compensar el header fijo */
+/* Estado inicial - header completo visible */
+.uc-header.header-visible {
+  transform: translateY(0);
+}
+
+/* Estado scroll - solo menu visible */
+.uc-header.header-compact {
+  transform: translateY(-120px); /* Ocultar parte superior del header */
+}
+
+/* Menú de navegación siempre visible */
+.uc-navbar_nav {
+  position: relative;
+  z-index: 1001;
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+/* Cuando está en modo compacto, el menú se queda fijo arriba */
+.uc-header.header-compact .uc-navbar_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1002;
+}
+
+/* Ajustar el body para compensar el header */
 body {
-  padding-top: 180px; /* Espacio para el header UC completo */
+  padding-top: 180px; /* Espacio para el header UC completo inicialmente */
+  transition: padding-top 0.4s ease;
+}
+
+/* Cuando el header está en modo compacto, reducir padding */
+body.header-scrolled {
+  padding-top: 60px; /* Solo espacio para el menú compacto */
 }
 
 /* Para pantallas móviles */
 @media (max-width: 991px) {
   body {
-    padding-top: 100px; /* Menos espacio en móvil */
+    padding-top: 100px;
+  }
+  
+  body.header-scrolled {
+    padding-top: 50px;
+  }
+  
+  .uc-header.header-compact {
+    transform: translateY(-80px);
+  }
+  
+  .uc-header.header-compact .uc-navbar_nav {
+    padding: 10px 0;
   }
 }
 
