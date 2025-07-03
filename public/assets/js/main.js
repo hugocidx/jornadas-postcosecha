@@ -21,15 +21,39 @@
     }
   });
 
-  // for menu scroll 
-  $('.page-scroll').click(function () {
+  // for menu scroll - Optimizado para respuesta rápida
+  $('.page-scroll').click(function (e) {
+    e.preventDefault(); // Prevenir comportamiento por defecto
+    
     var hash = this.hash;
-    // Ajustar offset para el header UC fijo (180px en escritorio, 100px en móvil)
-    var offset = window.innerWidth > 991 ? 180 : 100;
-    var position = $(hash).offset().top - offset;
-    $('html').animate({
-      scrollTop: position
-    }, 900);
+    var $target = $(hash);
+    
+    // Verificar que el elemento objetivo existe
+    if ($target.length) {
+      // Feedback visual inmediato
+      $(this).addClass('active-click');
+      setTimeout(() => $(this).removeClass('active-click'), 200);
+      
+      // Ajustar offset para el header UC fijo (180px en escritorio, 100px en móvil)
+      var offset = window.innerWidth > 991 ? 180 : 100;
+      var position = $target.offset().top - offset;
+      
+      // Usar animación optimizada con fallback
+      $('html, body').stop().animate({
+        scrollTop: position
+      }, {
+        duration: 350,
+        easing: 'swing', // Más compatible que easeOutQuart
+        complete: function() {
+          // Actualizar URL sin recargar página
+          if (history.pushState) {
+            history.pushState(null, null, hash);
+          }
+        }
+      });
+    }
+    
+    return false;
   });
 
   //===== Section Menu Active

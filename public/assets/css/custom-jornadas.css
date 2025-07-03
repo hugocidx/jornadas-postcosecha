@@ -474,21 +474,36 @@ a:hover {
   opacity: 0.3;
 }
 
-/* Scroll suave para todos los enlaces de navegación */
+/* Scroll suave optimizado para mejor rendimiento */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 180px; /* Compensar header fijo automáticamente */
+}
+
+@media (max-width: 991px) {
+  html {
+    scroll-padding-top: 100px;
+  }
 }
 
 /* Estilos adicionales para el header UC para que funcione con el scroll */
 .uc-btn.page-scroll,
 .list-item.page-scroll {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease; /* Reducido de 0.3s a 0.2s */
 }
 
 .uc-btn.page-scroll:hover,
 .list-item.page-scroll:hover {
   color: var(--uc-celeste) !important;
+  transform: translateY(-1px); /* Feedback visual inmediato */
+}
+
+/* Feedback visual al hacer clic */
+.uc-btn.page-scroll.active-click,
+.list-item.page-scroll.active-click {
+  transform: scale(0.95);
+  background-color: rgba(1, 118, 222, 0.1);
 }
 
 /* Header UC sticky/fixed position - mantener diseño original */
