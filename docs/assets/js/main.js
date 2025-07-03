@@ -8,10 +8,19 @@
     $('#loader').fadeOut();
   });
 
-  //===== Sticky
+  //===== Sticky header UC - cambio entre estados completo y compacto
 
   $(window).on('scroll', function (event) {
     var scroll = $(window).scrollTop();
+    
+    // Header UC compacto al hacer scroll
+    if (scroll > 100) {
+      $(".uc-header").addClass("scrolled");
+    } else {
+      $(".uc-header").removeClass("scrolled");
+    }
+    
+    // Mantener funcionalidad original para otros headers si existen
     if (scroll < 20) {
       $(".navigation").removeClass("sticky");
     } else {
@@ -22,8 +31,8 @@
   // for menu scroll 
   $('.page-scroll').click(function () {
     var hash = this.hash;
-    // Ajustar offset para el header UC fijo (130px en escritorio, 90px en móvil)
-    var offset = window.innerWidth > 991 ? 130 : 90;
+    // Ajustar offset para el header UC compacto (80px cuando está compacto)
+    var offset = 80;
     var position = $(hash).offset().top - offset;
     $('html').animate({
       scrollTop: position
@@ -38,8 +47,8 @@
     var scrollbarLocation = $(this).scrollTop();
 
     scrollLink.each(function () {
-      // Ajustar offset para el header UC fijo
-      var offset = window.innerWidth > 991 ? 130 : 90;
+      // Ajustar offset para el header UC compacto
+      var offset = 80;
       var sectionOffset = $(this.hash).offset().top - offset;
 
       if (sectionOffset <= scrollbarLocation) {

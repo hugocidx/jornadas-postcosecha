@@ -684,7 +684,7 @@
     color: var(--uc-celeste) !important;
   }
 
-  /* Header UC sticky/fixed position */
+  /* Header UC sticky/fixed position con estados compacto/completo */
   .uc-header {
     position: fixed !important;
     top: 0;
@@ -697,21 +697,92 @@
     transition: all 0.3s ease;
   }
 
-  /* Ajustar el body para compensar el header fijo */
+  /* Estado inicial - header completo */
+  .uc-header-full {
+    display: block;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Estado compacto - solo navegación */
+  .uc-header-compact {
+    display: none;
+    padding: 10px 0;
+    background-color: var(--uc-azul);
+    transition: all 0.3s ease;
+  }
+
+  /* Navegación inicial (debajo del header completo) */
+  .uc-header-nav-initial {
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  /* Cuando se hace scroll - clase agregada por JavaScript */
+  .uc-header.scrolled .uc-header-full {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .uc-header.scrolled .uc-header-nav-initial {
+    display: none;
+  }
+
+  .uc-header.scrolled .uc-header-compact {
+    display: block;
+  }
+
+  /* Estilos para el header compacto */
+  .uc-header-compact .logo-small {
+    max-height: 30px;
+    width: auto;
+  }
+
+  .uc-header-compact .title-compact {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--uc-blanco);
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .uc-header-compact .uc-navbar_nav {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .uc-header-compact .uc-btn {
+    padding: 8px 15px;
+    margin: 0 5px;
+    font-size: 14px;
+    color: var(--uc-blanco) !important;
+    border: 1px solid transparent;
+  }
+
+  .uc-header-compact .uc-btn:hover {
+    background-color: var(--uc-celeste) !important;
+    color: var(--uc-blanco) !important;
+  }
+
+  /* Ajustar el body para compensar el header */
   body {
-    padding-top: 120px; /* Ajustar según la altura del header UC */
+    padding-top: 120px; /* Para el header completo inicial */
   }
 
   /* Para pantallas móviles */
   @media (max-width: 991px) {
     body {
-      padding-top: 80px; /* Menos espacio en móvil */
+      padding-top: 80px;
     }
   }
 
   /* Asegurar que el scroll llegue a la posición correcta */
   .section {
-    scroll-margin-top: 130px; /* Compensar la altura del header fijo */
+    scroll-margin-top: 80px; /* Altura del header compacto */
   }
 
   @media (max-width: 991px) {
@@ -752,21 +823,70 @@
       <nav class="uc-navbar">
         <!-- Menú para versión Escritorio -->
         <div class="container d-none d-lg-block">
-          <div class="row">
-            <div class="col-lg-3 col-xl-2">
-              <img
-                src="https://kit-digital-uc-prod.s3.amazonaws.com/assets/logo-uc-azul.svg"
-                alt="Pontificia Universidad Católica de Chile"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col-lg-8 col-xl-9 pl-60">
-              <div class="h2 text-font--serif text-color--blue mt-24">IX JORNADAS DE POSTCOSECHA</div>
-              <div class="text-color--gray p-size--lg">
-                Slogan o bajada que describe la propuesta de valor del sitio
+          <!-- Sección completa del header (se oculta al hacer scroll) -->
+          <div class="uc-header-full">
+            <div class="row">
+              <div class="col-lg-3 col-xl-2">
+                <img
+                  src="https://kit-digital-uc-prod.s3.amazonaws.com/assets/logo-uc-azul.svg"
+                  alt="Pontificia Universidad Católica de Chile"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-lg-8 col-xl-9 pl-60">
+                <div class="h2 text-font--serif text-color--blue mt-24">IX JORNADAS DE POSTCOSECHA</div>
+                <div class="text-color--gray p-size--lg">
+                  Slogan o bajada que describe la propuesta de valor del sitio
+                </div>
               </div>
             </div>
-          </div>           <ul class="uc-navbar_nav">
+          </div>
+          
+          <!-- Navegación compacta (siempre visible al hacer scroll) -->
+          <div class="uc-header-compact">
+            <div class="row align-items-center">
+              <div class="col-lg-3">
+                <img
+                  src="https://kit-digital-uc-prod.s3.amazonaws.com/assets/logo-uc-azul.svg"
+                  alt="Pontificia Universidad Católica de Chile"
+                  class="img-fluid logo-small"
+                />
+                <span class="title-compact">IX JORNADAS DE POSTCOSECHA</span>
+              </div>
+              <div class="col-lg-9">
+                <ul class="uc-navbar_nav">
+                  <li class="nav-item">
+                    <a href="#slider-area" class="uc-btn btn-inline page-scroll">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#services" class="uc-btn btn-inline page-scroll">Jornadas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#features" class="uc-btn btn-inline page-scroll">Beneficios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#portfolios" class="uc-btn btn-inline page-scroll">Programa</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#pricing" class="uc-btn btn-inline page-scroll">Inscripciones</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#team" class="uc-btn btn-inline page-scroll">Exponentes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#subscribe" class="uc-btn btn-inline page-scroll">Auspiciadores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#contact" class="uc-btn btn-inline page-scroll">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navegación del estado inicial (no compacto) -->
+          <div class="uc-header-nav-initial">
+            <ul class="uc-navbar_nav">
              <li class="nav-item">
                <a href="#slider-area" class="uc-btn btn-inline page-scroll">Inicio</a>
              </li>
@@ -792,6 +912,7 @@
                <a href="#contact" class="uc-btn btn-inline page-scroll">Contacto</a>
              </li>
            </ul>
+          </div>
         </div>
         <!-- Menú para versión Móvil -->
         <div class="uc-navbar_mobile d-block d-lg-none">
