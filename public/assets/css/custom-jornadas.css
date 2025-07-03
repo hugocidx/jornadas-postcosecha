@@ -1,0 +1,528 @@
+/* Custom CSS for IX Jornadas de Postcosecha */
+/* Carrusel - Optimización de imágenes */
+.carousel-item img {
+  width: 100% !important;
+  height: 600px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 400px !important;
+  }
+}
+
+/* Colores Kit Digital UC */
+:root {
+  --uc-celeste: #0176DE;
+  --uc-azul: #173F8A;
+  --uc-azul-oscuro: #03122E;
+  --uc-amarillo: #FEC60D;
+  --uc-blanco: #FFFFFF;
+  --uc-gris-oscuro: #707070;
+  --uc-gris-claro: #F6F6F6;
+}
+
+/* Botones principales */
+.btn-common {
+  background-color: var(--uc-celeste) !important;
+  border-color: var(--uc-celeste) !important;
+  color: var(--uc-blanco) !important;
+}
+
+.btn-common:hover {
+  background-color: var(--uc-azul) !important;
+  border-color: var(--uc-azul) !important;
+  color: var(--uc-blanco) !important;
+}
+
+/* Botones secundarios */
+.btn-border {
+  background-color: transparent !important;
+  border-color: var(--uc-celeste) !important;
+  color: var(--uc-celeste) !important;
+}
+
+.btn-border:hover {
+  background-color: var(--uc-celeste) !important;
+  border-color: var(--uc-celeste) !important;
+  color: var(--uc-blanco) !important;
+}
+
+/* Navbar brand color */
+.navbar-brand {
+  color: var(--uc-azul-oscuro) !important;
+}
+
+.navbar-brand:hover {
+  color: var(--uc-celeste) !important;
+}
+
+/* Enlaces del menú */
+.navbar-nav .nav-link {
+  color: var(--uc-azul-oscuro) !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--uc-celeste) !important;
+}
+
+/* Títulos principales */
+.section-title {
+  color: var(--uc-azul-oscuro) !important;
+}
+
+/* Featured icons */
+.featured-icon {
+  color: var(--uc-celeste) !important;
+}
+
+/* Enlaces */
+a {
+  color: var(--uc-celeste) !important;
+}
+
+a:hover {
+  color: var(--uc-azul) !important;
+}
+
+/* Carousel indicators active */
+.carousel-indicators .active {
+  background-color: var(--uc-celeste) !important;
+}
+
+/* Background sections */
+.section {
+  background-color: var(--uc-blanco) !important;
+}
+
+.bg-defult {
+  background-color: var(--uc-gris-claro) !important;
+}
+
+/* Estilos específicos para sección About con fondo de frutas */
+.about-section {
+  position: relative !important;
+}
+
+.about-section .overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+.about-section .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.about-section h2,
+.about-section .about-content h2 {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 6px rgba(0,0,0,1) !important;
+  font-weight: bold !important;
+}
+
+.about-section p,
+.about-section .about-content p {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1) !important;
+  font-weight: 500 !important;
+}
+
+.about-content.text-white * {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,1) !important;
+}
+
+/* Animaciones para la card de venue */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-30px);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.05) translateY(-10px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(0.98) translateY(5px);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(1, 118, 222, 0.2);
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+}
+
+/* Animación sutil de resplandor cada 4 segundos */
+.venue-bounce {
+  animation: bounceIn 1.2s ease-out, pulseGlow 4s infinite ease-in-out 2s;
+}
+
+/* Mejora en la animación de las tarjetas de transporte */
+.transport-card {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de resplandor sutil al hover */
+.transport-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(1, 118, 222, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.transport-card:hover::before {
+  left: 100%;
+}
+
+/* Efectos de hover mejorados para cada tipo de transporte */
+.transport-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12) !important;
+}
+
+/* Efectos específicos por color de transporte */
+.transport-card[style*="border-top: 4px solid var(--uc-celeste)"]:hover {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(1, 118, 222, 0.05) 100%) !important;
+}
+
+.transport-card[style*="border-top: 4px solid var(--uc-azul)"]:hover {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(23, 63, 138, 0.05) 100%) !important;
+}
+
+.transport-card[style*="border-top: 4px solid var(--uc-amarillo)"]:hover {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(254, 198, 13, 0.05) 100%) !important;
+}
+
+/* Animaciones para las tarjetas de "¿Por qué participar?" */
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.featured-box {
+  animation: fadeInBounce 0.8s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Retraso escalonado para cada tarjeta */
+.featured-box:nth-child(1) { animation-delay: 0.1s; }
+.featured-box:nth-child(2) { animation-delay: 0.2s; }
+.featured-box:nth-child(3) { animation-delay: 0.3s; }
+.featured-box:nth-child(4) { animation-delay: 0.4s; }
+.featured-box:nth-child(5) { animation-delay: 0.5s; }
+.featured-box:nth-child(6) { animation-delay: 0.6s; }
+
+.featured-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.featured-box:hover .featured-icon i {
+  animation: iconPulse 0.6s ease infinite;
+  color: var(--uc-celeste);
+}
+
+/* Efecto de resplandor sutil en hover */
+.featured-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(1, 118, 222, 0.05), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.featured-box:hover::before {
+  opacity: 1;
+  animation: shimmer 1.5s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Animaciones para las tarjetas de Inscripciones */
+@keyframes priceCardBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes priceGlow {
+  0% {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(1, 118, 222, 0.15);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+}
+
+.pricing-table {
+  animation: priceCardBounce 0.9s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Retraso escalonado para cada tarjeta de precio */
+.pricing-table:nth-child(1) { animation-delay: 0.2s; }
+.pricing-table:nth-child(2) { animation-delay: 0.4s; }
+.pricing-table:nth-child(3) { animation-delay: 0.6s; }
+
+/* Efecto especial para la tarjeta destacada */
+.pricing-table.pricing-big {
+  animation: priceCardBounce 1s ease-out, priceGlow 3s infinite ease-in-out 1.5s;
+}
+
+.pricing-table:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.pricing-table.pricing-big:hover {
+  transform: translateY(-15px) scale(1.06);
+  box-shadow: 0 25px 50px rgba(1, 118, 222, 0.2);
+}
+
+/* Efecto de gradiente animado en hover */
+.pricing-table::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(1, 118, 222, 0.08), transparent);
+  transition: left 0.8s ease;
+  z-index: 1;
+}
+
+.pricing-table:hover::before {
+  left: 100%;
+}
+
+/* Animación para el texto del precio */
+.pricing-table:hover .price {
+  color: var(--uc-celeste);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.pricing-table:hover .btn {
+  background: var(--uc-azul);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 63, 138, 0.3);
+}
+
+/* Efecto de pulsación sutil en los iconos */
+.transport-icon i {
+  transition: all 0.3s ease;
+}
+
+.transport-card:hover .transport-icon i {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.transport-card:nth-child(1) { animation-delay: 0.1s; }
+.transport-card:nth-child(2) { animation-delay: 0.2s; }
+.transport-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación adicional para el contenedor de fechas */
+.event-dates {
+  animation: slideInRight 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efectos sutiles para los detalles de transporte */
+.transport-details p {
+  transition: all 0.3s ease;
+}
+
+.transport-card:hover .transport-details p:last-child {
+  transform: translateY(-2px);
+  font-weight: 700;
+}
+
+/* Animación sutil de entrada para los títulos de transporte */
+.transport-card h5 {
+  transition: all 0.3s ease;
+}
+
+.transport-card:hover h5 {
+  transform: translateY(-1px);
+  letter-spacing: 0.5px;
+}
+
+/* Efecto de borde animado */
+.transport-card {
+  position: relative;
+}
+
+.transport-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--uc-celeste), var(--uc-azul), var(--uc-amarillo));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px 15px 0 0;
+}
+
+.transport-card:hover::after {
+  opacity: 0.3;
+}
+
+/* Scroll suave para todos los enlaces de navegación */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos adicionales para el header UC para que funcione con el scroll */
+.uc-btn.page-scroll,
+.list-item.page-scroll {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uc-btn.page-scroll:hover,
+.list-item.page-scroll:hover {
+  color: var(--uc-celeste) !important;
+}
+
+/* Header UC sticky/fixed position - mantener diseño original */
+.uc-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Ajustar el body para compensar el header fijo */
+body {
+  padding-top: 180px; /* Espacio para el header UC completo */
+}
+
+/* Para pantallas móviles */
+@media (max-width: 991px) {
+  body {
+    padding-top: 100px; /* Menos espacio en móvil */
+  }
+}
+
+/* Asegurar que el scroll llegue a la posición correcta */
+.section {
+  scroll-margin-top: 180px; /* Compensar la altura del header fijo */
+}
+
+@media (max-width: 991px) {
+  .section {
+    scroll-margin-top: 100px;
+  }
+}
