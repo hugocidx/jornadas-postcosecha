@@ -121,7 +121,6 @@
           <div class="carousel-item">
             <img src="{{ asset('assets/img/slider/bg-3.jpg') }}" alt="Pontificia Universidad Católica de Chile">
             <div class="carousel-caption text-center">
-              <h3 class="wow fadeInDown" data-wow-delay="0.3s">ANUNCIO (1/3):</h3>
               <h2 class="wow bounceIn" data-wow-delay="0.6s">FACULTAD DE AGRONOMÍA Y SISTEMAS NATURALES UC</h2>
               <h4 class="wow fadeInUp" data-wow-delay="0.9s">IX JORNADAS DE POSTCOSECHA 2025</h4>
               <a href="#features" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">Ver
@@ -167,7 +166,7 @@
               <i class="lni lni-calendar"></i>
             </div>
             <h4>Fechas del Evento</h4>
-            <p>Miércoles 15 y jueves 16 de octubre de 2025 en la Facultad de Agronomía y Sistemas Naturales UC,
+            <p>Miércoles 15 y jueves 16 de octubre de 2025 en Campus San Joaquín, PUC,
               Santiago, Chile.</p>
           </div>
         </div>
@@ -176,9 +175,8 @@
             <div class="icon color-2">
               <i class="lni lni-graduation"></i>
             </div>
-            <h4>Expertos Internacionales</h4>
-            <p>Conferencias magistrales, talleres prácticos y demostraciones con los mejores especialistas en
-              postcosecha a nivel mundial.</p>
+            <h4>Investigadores y líneas de investigación</h4>
+            <p>Conferencias Magistrales, Presentación de trabajos en diferentes lineas de investigacion, Grupos de trabajos desde regiones.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -186,8 +184,8 @@
             <div class="icon color-3">
               <i class="lni lni-leaf"></i>
             </div>
-            <h4>Innovación Tecnológica</h4>
-            <p>Últimas tendencias en conservación, procesamiento y control de calidad de productos agrícolas frescos.
+            <h4>Innovación</h4>
+            <p>Visualiza las últimas tendencias en poscosecha y su evolución hacía su uso comercial en la industria. Oportunidades y desafíos.
             </p>
           </div>
         </div>
@@ -196,9 +194,8 @@
             <div class="icon color-4">
               <i class="lni lni-users"></i>
             </div>
-            <h4>Networking</h4>
-            <p>Oportunidades únicas de networking con profesionales, investigadores y empresarios del sector
-              agroindustrial.</p>
+            <h4>Investigacion-Empresas</h4>
+            <p>Ambiente de colaboración y discusión entre empresas e instituciones públicas. Instancias de contactos y relaciones entre la academia, instituciones de investigación y empresas.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -207,8 +204,7 @@
               <i class="lni lni-certificate"></i>
             </div>
             <h4>Certificación</h4>
-            <p>Certificado de participación otorgado por la Pontificia Universidad Católica de Chile a todos los
-              asistentes.</p>
+            <p>Certificado de asistencia otorgado por la Pontifica Universidad Católica de Chile.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -216,15 +212,65 @@
             <div class="icon color-6">
               <i class="lni lni-heart"></i>
             </div>
-            <h4>Apoyo Institucional</h4>
-            <p>Patrocinado por Frutas de Chile y Fedefruta, con apoyo de importantes auspiciadores nacionales e
-              internacionales.</p>
+            <h4>Patrocinio Institucional</h4>
+            <p>Jornadas patrocinadas por Frutas de Chile y Fedefruta.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- Fin de las Jornadas -->
+
+  <!-- Inicio Sección de Estadísticas Animadas -->
+  <section id="stats" class="section stats-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title text-white">Fechas Importantes</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="stat-item wow fadeInUp" data-wow-delay="0.2s">
+            <div class="stat-icon">
+              <i class="lni lni-calendar"></i>
+            </div>
+            <div class="stat-counter">
+              <span class="counter" data-count="10">0</span>
+              <span class="counter-suffix"> JUL</span>
+            </div>
+            <h4 class="stat-title">Inicio Envío</h4>
+            <p class="stat-description">Apertura recepción de resúmenes</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="stat-item wow fadeInUp" data-wow-delay="0.4s">
+            <div class="stat-icon">
+              <i class="lni lni-envelope"></i>
+            </div>
+            <div class="stat-counter">
+              <span class="counter" data-count="29">0</span>
+              <span class="counter-suffix"> AGO</span>
+            </div>
+            <h4 class="stat-title">Cierre Envío</h4>
+            <p class="stat-description">Fecha límite recepción resúmenes</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="stat-item wow fadeInUp" data-wow-delay="0.6s">
+            <div class="stat-icon">
+              <i class="lni lni-checkmark-circle"></i>
+            </div>
+            <div class="stat-counter">
+              <span class="counter" data-count="30">0</span>
+              <span class="counter-suffix"> SEP</span>
+            </div>
+            <h4 class="stat-title">Notificación</h4>
+            <p class="stat-description">Comunicación de aceptación</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fin Sección de Estadísticas Animadas -->
 
   <!-- Inicio Sección de información -->
   <section class="about-section section"

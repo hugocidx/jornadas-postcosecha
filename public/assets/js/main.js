@@ -242,6 +242,79 @@
     }
   });
 
+  //===== Contadores animados - Versión simplificada
+  var countersStarted = false;
+  
+  function startCounters() {
+    if (countersStarted) return;
+    
+    var counters = document.querySelectorAll('.counter');
+    if (counters.length === 0) return;
+    
+    countersStarted = true;
+    console.log('🎯 Iniciando contadores...');
+    
+    counters.forEach(function(counter, index) {
+      var target = parseInt(counter.getAttribute('data-count'));
+      if (isNaN(target)) return;
+      
+      console.log('🔢 Contador', index + 1, '- Target:', target);
+      
+      var current = 0;
+      var increment = target / 100; // 100 pasos
+      var timer = setInterval(function() {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target;
+          clearInterval(timer);
+          console.log('✅ Contador', index + 1, 'completado');
+        } else {
+          counter.textContent = Math.floor(current);
+        }
+      }, 20); // 20ms entre pasos = 2 segundos total
+    });
+  }
+  
+  function isStatsVisible() {
+    var statsSection = document.querySelector('.stats-section');
+    if (!statsSection) return false;
+    
+    var rect = statsSection.getBoundingClientRect();
+    var windowHeight = window.innerHeight;
+    return rect.top < windowHeight * 0.8;
+  }
+  
+  // Verificar inmediatamente al cargar
+  $(document).ready(function() {
+    console.log('📄 Documento listo');
+    setTimeout(function() {
+      if (isStatsVisible()) {
+        console.log('👁️ Sección visible al cargar');
+        startCounters();
+      }
+    }, 1000);
+  });
+  
+  // Verificar al hacer scroll
+  $(window).scroll(function() {
+    if (!countersStarted && isStatsVisible()) {
+      console.log('👁️ Sección visible por scroll');
+      startCounters();
+    }
+  });
+  
+  // Botón de prueba para forzar animación (solo para debug)
+  $(document).ready(function() {
+    if (window.location.hash === '#debug') {
+      $('body').prepend('<button id="testCounters" style="position:fixed;top:10px;right:10px;z-index:9999;background:red;color:white;padding:10px;">Test Counters</button>');
+      $('#testCounters').click(function() {
+        countersStarted = false;
+        $('.counter').text('0');
+        startCounters();
+      });
+    }
+  });
+
   //Initiat WOW JS
   new WOW().init();
 
