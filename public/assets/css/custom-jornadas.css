@@ -621,6 +621,14 @@ body.header-scrolled {
   padding: 80px 0;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.stats-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stats-section::before {
@@ -671,6 +679,13 @@ body.header-scrolled {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stat-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stat-item:hover {

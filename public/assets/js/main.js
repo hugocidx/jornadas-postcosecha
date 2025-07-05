@@ -242,7 +242,7 @@
     }
   });
 
-  //===== Contadores animados - Versión simplificada
+  //===== Contadores animados - Versión mejorada y más fluida
   var countersStarted = false;
   
   function startCounters() {
@@ -254,25 +254,56 @@
     countersStarted = true;
     console.log('🎯 Iniciando contadores...');
     
+    // Animar la sección
+    var statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      statsSection.classList.add('fade-in');
+    }
+    
+    // Animar cada stat-item
+    var statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach(function(item, index) {
+      setTimeout(function() {
+        item.classList.add('animate-in');
+      }, index * 200);
+    });
+    
     counters.forEach(function(counter, index) {
       var target = parseInt(counter.getAttribute('data-count'));
       if (isNaN(target)) return;
       
       console.log('🔢 Contador', index + 1, '- Target:', target);
       
-      var current = 0;
-      var increment = target / 100; // 100 pasos
-      var timer = setInterval(function() {
-        current += increment;
-        if (current >= target) {
-          counter.textContent = target;
-          clearInterval(timer);
-          console.log('✅ Contador', index + 1, 'completado');
-        } else {
-          counter.textContent = Math.floor(current);
-        }
-      }, 20); // 20ms entre pasos = 2 segundos total
+      // Delay escalonado para cada contador
+      setTimeout(function() {
+        animateCounterSmooth(counter, target, 1500); // 1.5 segundos
+      }, index * 300 + 800); // 800ms después de la animación de entrada
     });
+  }
+  
+  function animateCounterSmooth(element, target, duration) {
+    var start = 0;
+    var startTime = performance.now();
+    
+    function updateCounter(currentTime) {
+      var elapsed = currentTime - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      
+      // Usar easing suave tipo ease-out para animación más natural
+      var easedProgress = 1 - Math.pow(1 - progress, 3);
+      
+      var currentValue = Math.round(start + (target - start) * easedProgress);
+      element.textContent = currentValue;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+        console.log('✅ Contador completado:', target);
+      }
+    }
+    
+    requestAnimationFrame(updateCounter);
   }
   
   function isStatsVisible() {
@@ -310,7 +341,11 @@
       $('#testCounters').click(function() {
         countersStarted = false;
         $('.counter').text('0');
-        startCounters();
+        $('.stats-section').removeClass('fade-in');
+        $('.stat-item').removeClass('animate-in');
+        setTimeout(function() {
+          startCounters();
+        }, 100);
       });
     }
   });
